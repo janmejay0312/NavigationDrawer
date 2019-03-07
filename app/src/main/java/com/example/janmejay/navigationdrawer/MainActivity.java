@@ -26,15 +26,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dl = findViewById(R.id.activity_main);
-        t = new ActionBarDrawerToggle(this, dl,R.string.Open, R.string.Close);
 
+        android.support.v7.widget.Toolbar toolbar=findViewById(R.id.home_page_toolbar);
+        dl = findViewById(R.id.activity_main);
+       t = new ActionBarDrawerToggle(this, dl,toolbar,R.string.Open, R.string.Close);
         dl.addDrawerListener(t);
         t.syncState();
-        android.support.v7.widget.Toolbar toolbar=findViewById(R.id.toolbar);
-        toolbar.setBackgroundColor(Color.TRANSPARENT);
+        //setSupportActionBar(toolbar);
+       // getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         nv = (NavigationView)findViewById(R.id.nv);
 
